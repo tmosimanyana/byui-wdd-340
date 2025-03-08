@@ -1,44 +1,22 @@
-/*******************************************
- * This server.js file is the primary file of the 
- * application. It is used to control the project.
- *******************************************/
-
-/* ***********************
- * Require Statements
- *************************/
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts"); // Removed duplicate
+const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config();
 const app = express();
-const static = require("./routes/static");
+const static = require("./routes/static");  // Import static.js
 
-/* ***********************
- * View Engine and Templates
- *************************/
+// View Engine and Templates
 app.set("view engine", "ejs");
 app.use(expressLayouts);
-app.set("layout", "./layouts/layout"); // Not at views root
+app.set("layout", "./layouts/layout");
 
-/* ***********************
- * Routes
- *************************/
-app.use(static);
+// Routes
+app.use(static);  // Use the static route for serving static files
 
-// Index Route
-app.get("/", (req, res) => {
-  res.render("index", { title: "Home" });
-});
+// Local Server Information
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || "localhost";
 
-/* ***********************
- * Local Server Information
- * Values from .env (environment) file
- *************************/
-const port = process.env.PORT || 3000; // Default to 3000 if not set
-const host = process.env.HOST || "localhost"; // Default to localhost if not set
-
-/* ***********************
- * Log statement to confirm server operation
- *************************/
+// Log statement to confirm server operation
 app.listen(port, () => {
   console.log(`App listening on ${host}:${port}`);
 });
