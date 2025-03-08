@@ -24,6 +24,11 @@ app.set("layout", "./layouts/layout"); // Not at views root
  *************************/
 app.use(static);
 
+// Index Route
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
+
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file
@@ -37,4 +42,3 @@ const host = process.env.HOST || "localhost"; // Default to localhost if not set
 app.listen(port, () => {
   console.log(`App listening on ${host}:${port}`);
 });
-
