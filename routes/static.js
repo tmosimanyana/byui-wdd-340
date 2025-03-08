@@ -3,6 +3,18 @@ const router = express.Router();
 
 // Static Routes
 // Set up "public" folder / subfolders for static files
+
+
+// View Engine and Templates
+// Set up "public" folder / subfolders for static files
+app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("layout", "./layouts/layout") // not at views root
+
+
+
+
+
 router.use(express.static("public"));
 router.use("/css", express.static(__dirname + "public/css"));
 router.use("/js", express.static(__dirname + "public/js"));
