@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: white;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.account {
+    color: gray;
+}
+
+.intro {
+    padding: 20px;
+}
+
+.car-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.car-text {
+    text-align: left;
+    margin-right: 20px;
+}
+
+.car-text h3 {
+    color: blue;
+}
+
+button {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.reviews, .upgrades {
+    margin: 20px;
+}
+
+.upgrade-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upgrade-item {
+    margin: 10px;
+    text-align: center;
+}
+
+.upgrade-item img {
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .car-info {
+        flex-direction: column;
+    }
+
+    .upgrade-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
